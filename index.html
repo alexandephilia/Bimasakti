@@ -31,7 +31,7 @@
             justify-content: center;
             gap: 80px;
             padding: 20px;
-            max-width: 1333px;
+            max-width: 1303px;
             margin: 0 auto;
             animation: fadeIn 0.3s ease-in;
             position: relative;
@@ -92,14 +92,31 @@
             background: linear-gradient(to left bottom, #0061ff 0%, #46dfafd4 100%);
             padding: 70px 50px;
             border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.452);
             color: white;
             width: 450px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1),
+                       inset 0 0 0 1px rgba(255, 255, 255, 0.12);
             margin-right: 60px;
             min-height: 550px;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            backdrop-filter: blur(5px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-form-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 17px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            pointer-events: none;
         }
 
         .login-form-section h3 {
@@ -193,7 +210,8 @@
         @media (max-width: 992px) {
             .main-container {
                 flex-direction: column;
-                gap: 50px;
+                gap: 30px;
+                padding: 20px;
             }
 
             .brand-section,
@@ -201,14 +219,29 @@
                 margin: 0;
             }
 
-            .brand-description {
-                max-width: 100%;
-                padding: 0 20px;
+            .brand-section {
+                order: 1;
             }
 
             .login-form-section {
+                order: 2;
                 width: 100%;
                 max-width: 450px;
+            }
+
+            .brand-description {
+                display: none;
+            }
+
+            .mobile-footer-description {
+                display: block !important;
+                order: 3;
+                text-align: center;
+                margin-top: 30px;
+                padding: 0 20px;
+                font-size: 0.85rem;
+                color: #666;
+                line-height: 1.5;
             }
 
             .brand-section img {
@@ -218,6 +251,7 @@
             .cloud-icon {
                 width: 130px;
                 height: 130px;
+                margin: 15px 0 5px;
             }
         }
 
@@ -1054,7 +1088,7 @@
             </form>
         </div>
 
-        <!-- Add mobile description container -->
+        <!-- Mobile/Tablet Footer Description -->
         <div class="mobile-footer-description d-none">
             To learn more about our Property & Tenancy Management System, visit our website at Bimasakti.
             Copyright © 2024 PT Realta Chakradarma. All rights reserved.
