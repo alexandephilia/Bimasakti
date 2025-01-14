@@ -1048,6 +1048,44 @@
                 background-position: 0% 50%;
             }
         }
+
+        /* Mobile/Tablet Footer Description */
+        .mobile-footer-description {
+            display: none;
+            max-width: 400px;
+            margin: 20px auto 0;
+            text-align: center;
+            font-size: 0.74rem;
+            line-height: 1.4;
+            color: #666;
+            padding: 0 15px;
+        }
+
+        .mobile-footer-description a {
+            color: #0061ff;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        @media screen and (max-width: 992px) {
+            .mobile-footer-description {
+                display: block !important;
+                order: 3;
+            }
+
+            .brand-description {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .mobile-footer-description {
+                max-width: 280px;
+                font-size: 0.7rem;
+                padding: 0 10px;
+            }
+        }
     </style>
 </head>
 
